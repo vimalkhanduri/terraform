@@ -1,6 +1,11 @@
 # terraform
 This is just tutorial for terraform
 install terraform on system
+configuring aws command line
+===
+Create a user in aws with any name and give that as admin access and command line access to user 
+aws configure  -> give private and public key and location where you want to connect.
+ 
 To check terraform 
 terraform -version
 terraform init --> This will install package of terrafomr 
