@@ -1,0 +1,32 @@
+# terraform
+This is just tutorial for terraform
+install terraform on system
+To check terraform 
+terraform -version
+terraform init --> This will install package of terrafomr 
+terraform apply -> This command will run all the file with extention .tf 
+program to create VPC and one submet 
+=====================================
+provider "aws" {
+  region     = "us-west-2"
+}
+
+resource "aws_vpc" "main" {
+  cidr_block       = "190.160.0.0/16"
+  instance_tenancy = "default"
+  tags {
+    Name = "main"
+    Location = "Bangalore"
+  }
+}
+
+ resource "aws_subnet" "subnet1" {
+  vpc_id     = "${aws_vpc.main.id}"
+  cidr_block = "190.160.1.0/24"
+
+  tags {
+    Name = "Subnet1"
+  }
+}
+==============================
+terraform destroy
